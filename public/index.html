@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remenber Me</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./Img/logo.jpg" type="image/jpg" />
+</head>
+
+<body>
+
+  <main>
+    <div id="container">
+      <h1>Remember Me</h1>
+    </div>
+
+    <input type="hidden" id="userhidden">
+    <input type="hidden" id="_idhidden">
+
+    <div class="login-box" id="login-box">
+      <h2>Login</h2>
+
+      <div class="user-box">
+        <input type="text" id="username">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" id="password">
+        <label>Password</label>
+      </div>
+
+      <div class="buttons">
+        <button onclick="login();">Login</button>
+        <button onclick="registrarUsuario();">Registrarse</button>
+      </div>
+    </div>
+
+    <div class="login-box" id="panelCategoria">
+      <h2>Crear Categoria</h2>
+      <div class="user-box">
+        <input type="text" id="category">
+        <label>Categoria</label>
+        <p class="ejemplos">Ej: Deportes, Social, Familia, ...</p>
+      </div>
+      <div class="buttons">
+        <button onclick="crearCategory();">Crear</button>
+      </div>
+    </div>
+
+    <div class="login-box" id="panelCategoria2">
+      <h2>Crear Categoria</h2>
+      <div class="user-box">
+        <input type="text" id="category2">
+        <label>Categoria</label>
+        <p class="ejemplos">Ej: Deportes, Social, Familia, ...</p>
+      </div>
+      <div class="buttons">
+        <button onclick="crearCategory2();">Crear</button>
+        <button onclick="ocultarMostrar('panelCategoria2','panelCreate');">Siguiente</button>
+      </div>
+    </div>
+
+    <div class="login-box" id="panelCreate">
+      <h2>Crear Evento</h2>
+      </select>
+      <div class="user-box">
+        <input type="text" id="crearEvent">
+        <label>Evento</label>
+        <p class="ejemplos">Ej: Comprar Móvil, Fiesta con amigos, Mi boda, ...</p>
+        <select id="selectCategory">
+
+          <input type="date" name="" id="dateEvent">
+      </div>
+      <div class="buttons">
+        <button onclick="crearEvent();">Crear</button>
+        <button onclick="ocultarMostrar('panelCreate','panelCategoria2');">Categoria</button>
+      </div>
+      <div class="buttons">
+        <button onclick="ocultarMostrar('panelCreate','panelButtons');">Volver</button>
+      </div>
+    </div>
+
+    <div class="login-box" id="panelButtons">
+      <h2>Eventos To Remember</h2>
+      <div class="buttons">
+        <button onclick="ocultarMostrarLoadSelect('panelButtons','panelSearch','selectCategorySearch');">Buscar</button>
+        <button onclick="ocultarMostrarLoadSelect('panelButtons','panelCreate','selectCategory');">Crear</button>
+        <button onclick="showAll()">Mostrar</button>
+        <button onclick="ocultarMostrarLogOut('panelButtons','login-box');">Salir</button>
+      </div>
+    </div>
+
+    <div class="login-box" id="panelSearch">
+      <h2>Buscar Evento</h2>
+      <div class="user-box">
+        <input type="text" id="event">
+        <label>Evento</label>
+        <select id="selectCategorySearch">
+          <option>Elije una categoria...</option>
+          <input type="date" name="" id="dateSearchEvent" style="display: none;">
+          <div class="buttons">
+            <button onclick="searchEvent();">Buscar</button>
+            <button onclick="ocultarMostrar('panelSearch','panelButtons');">Volver</button>
+          </div>
+      </div>
+    </div>
+
+    <div class="login-box" id="panelModifyEvent">
+      <div class="user-box">
+        <h2>Modificar Evento</h2>
+        <input type="text" id="nameModifyEvent">
+        <label>Evento</label>
+        <select id="selectModidyCategory">
+
+          <input type="text" name="" id="dateModifyEvent">
+          <label></label>
+          <div class="buttons">
+            <button onclick="modifyEvent();">Modificar</button>
+            <button onclick="ocultarMostrar('panelModifyEvent','panelButtons');">Volver</button>
+          </div>
+      </div>
+    </div>
+    <div id="mostrarEventos" class="eventos">
+    </div>
+
+  </main>
+
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
